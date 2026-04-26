@@ -3,7 +3,7 @@ name: Publish to npm
 on:
   push:
     tags:
-      - "v*.*.*"   # only semver tags like v1.2.3
+      - "*.*.*"   # only semver tags like v1.2.3
 
 jobs:
   publish:
