@@ -2,7 +2,7 @@
 
 ---
 
-- [Easy Assertions]()
+- [Easy Assertions](#assert-const)
 
 Get Started:
 
