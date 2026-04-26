@@ -26,5 +26,9 @@
     "jest": "^30.3.0",
     "ts-jest": "^29.4.9",
     "typescript": "^6.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DiogooCunha/asser-ts#assert-const"
   }
 }
