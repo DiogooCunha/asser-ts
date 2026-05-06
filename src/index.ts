@@ -5,6 +5,7 @@ interface Assert {
   isString(val: unknown, message?: string): asserts val is string;
   isNumber(val: unknown, message?: string): asserts val is number;
   isObject(val: unknown, message?: string): asserts val is object;
+  isBoolean(val: unknown, message?: string): asserts val is boolean;
 
   // EXPRESSION ASSERTION
   that(val: unknown, expression: Function, message?: string): boolean;
@@ -30,6 +31,12 @@ export const assert: Assert = {
   isObject(val: unknown, message?: string): asserts val is object {
     if (typeof val !== "object") {
       throw new ObjectError(message ?? "Expected object.");
+    }
+  },
+
+  isBoolean(val: unknown, message?: string): asserts val is boolean {
+    if (typeof val !== "boolean") {
+      throw new AssertionError(message ?? "Expected boolean");
     }
   },
 

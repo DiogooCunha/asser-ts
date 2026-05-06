@@ -41,6 +41,18 @@ describe("Assert", () => {
     });
   });
 
+  describe("isBoolean", () => {
+    it("should assert that the value is a boolean", () => {
+      const correctValue = true;
+      assert.isBoolean(correctValue);
+    });
+
+    it("should throw if value is not boolean", () => {
+      const incorrectValue = "true";
+      expect(() => assert.isBoolean(incorrectValue)).toThrow();
+    });
+  });
+
   describe("that", () => {
     it("should return true if the expression returns true", () => {
       const value = "string";
