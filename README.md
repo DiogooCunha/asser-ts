@@ -6,7 +6,7 @@
 
 Get Started:
 
-    * Install asser-ts with `npm i @diogoocunha/asser-ts`
+    `npm i @diogoocunha/asser-ts`
 
 # `assert` const
 
