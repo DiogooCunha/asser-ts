@@ -9,6 +9,7 @@ interface Assert {
 
   // EXPRESSION ASSERTION
   that(val: unknown, expression: Function, message?: string): boolean;
+  toMatch(val: string, expected: RegExp | string, message?: string): boolean;
 
   // EQUALS ASSERTION
   equal(val: unknown, compare: unknown, message?: string): boolean;
@@ -43,6 +44,22 @@ export const assert: Assert = {
   // EXPRESSION ASSERTION
   that(val: unknown, expression: Function, message?: string): boolean {
     if (!expression(val)) {
+      throw new ExpressionError(message ?? "Expression not successfull.");
+    }
+
+    return true;
+  },
+
+  toMatch(val: string, expected: RegExp | string, message: string): boolean {
+    if (expected instanceof (RegExp)) {
+      if (!expected.test(val)) {
+        throw new ExpressionError(message ?? "Expression not successfull.");
+      }
+
+      return true;
+    }
+
+    if (!val.includes(expected)) {
       throw new ExpressionError(message ?? "Expression not successfull.");
     }
 

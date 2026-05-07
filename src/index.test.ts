@@ -70,6 +70,21 @@ describe("Assert", () => {
     });
   });
 
+  describe("toMatch", () => {
+    it("should return true if the string exists in the value", () => {
+      const value = "superstring";
+
+      const res = assert.toMatch(value, "string");
+      expect(res).toBe(true);
+    });
+
+    it("should throw if the string does not exist in the value", () => {
+      const value = "superstring";
+
+      expect(() => assert.toMatch(value, "other")).toThrow();
+    });
+  });
+
   describe("equal", () => {
     it("should return true if the value are equal to the compared", () => {
       const value = 123;
