@@ -13,6 +13,9 @@ interface Assert {
 
   // EQUALS ASSERTION
   equal(val: unknown, compare: unknown, message?: string): boolean;
+
+  // FAILURE
+  failure(message?: string): void;
 }
 
 export const assert: Assert = {
@@ -73,5 +76,10 @@ export const assert: Assert = {
     }
 
     return true;
+  },
+
+  // FAILURE
+  failure(message?: string): void {
+    throw new Error(message ?? "Failure thrown.");
   },
 };

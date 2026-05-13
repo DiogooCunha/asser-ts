@@ -101,4 +101,10 @@ describe("Assert", () => {
       expect(() => assert.equal(value, compare)).toThrow();
     });
   });
+
+  describe("failure", () => {
+    it("should throw an error", () => {
+      expect(() => assert.failure()).toThrow();
+    });
+  });
 });
